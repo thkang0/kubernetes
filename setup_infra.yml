@@ -1,0 +1,9 @@
+# Example from an Ansible Playbook
+---
+- hosts: all
+  become: yes
+#  var_files:
+#   - ./common.yml
+  roles:
+    - role: kuber-master
+

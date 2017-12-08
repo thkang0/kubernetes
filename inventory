@@ -1,0 +1,9 @@
+[all]
+35.194.150.46 ansible_ssh_user=kth
+104.199.149.204 ansible_ssh_user=kth
+
+[master]
+35.194.150.46 ansible_ssh_user=kth
+
+[worker]
+104.199.149.204 ansible_ssh_user=kth

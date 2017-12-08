@@ -1,0 +1,42 @@
+---
+# tasks file for kubernetes
+#- copy:
+#    src: /home/thkang0/kubernetes/roles/kuber-master/templates/kubernetes.repo
+#    dest: /etc/yum.repos.d/kubernetes.repo
+#    owner: root
+#    group: root
+#    mode: 0644
+
+- name: Disable selinux 
+  become: yes
+  command: setenforce 0
+
+- name: Disable firewall
+  become: yes
+  command: systemctl disable firewalld 
+
+- name: Disable firewall
+  become: yes
+  command: systemctl stop firewalld
+
+- name: install kubernetes packages
+  become: yes
+  yum: pkg={{item}} state=installed
+  with_items:
+    - docker
+    - kubelet 
+    - kubeadm 
+    - kubectl 
+    - kubernetes-cni
+
+- name: Restart docker 
+  service:
+    name: docker
+    state: restarted
+
+- name: Restart kubelet
+  service:
+    name: kubelet
+    state: restarted
+
+
