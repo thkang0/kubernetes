@@ -1,9 +1,9 @@
 [all]
-35.194.150.46 ansible_ssh_user=kth
-104.199.149.204 ansible_ssh_user=kth
+13.58.25.198 ansible_ssh_user=centos ansible_ssh_private_key_file=/Users/alex/Documents/00_work/cert/thkang0.pem
+18.218.5.210 ansible_ssh_user=centos ansible_ssh_private_key_file=/Users/alex/Documents/00_work/cert/thkang0.pem
 
 [master]
-35.194.150.46 ansible_ssh_user=kth
+13.58.25.198 ansible_ssh_user=centos
 
 [worker]
-104.199.149.204 ansible_ssh_user=kth
+18.218.5.210 ansible_ssh_user=centos
